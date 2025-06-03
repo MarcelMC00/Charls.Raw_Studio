@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-gallery',
@@ -9,9 +10,11 @@ import { CommonModule } from '@angular/common';
 })
 export class Gallery {
 
+  constructor(private sanitizer: DomSanitizer) {}
+
   imagenes: { src: string, esVideo?: boolean }[] = [
     { src: '/img/Copia de BodaGyE_169.jpg' },
-    { src: '/video/Boda cesa y patri 10 06 2023.mp4', esVideo: true },
+    { src: 'https://youtube.com/embed/tbWboR-LbVQ', esVideo: true },
     { src: '/img/7Z4A0099.jpg' },
     { src: '/img/Copia de _MG_1862.jpg' },
     { src: '/img/Copia de BodaEyI_499.jpg' },
@@ -34,6 +37,10 @@ export class Gallery {
     { src: '/img/HyJ_06072024_111.JPG' },
     { src: '/img/HyJ_06072024_517.JPG' }
   ];
+
+  sanitizeVideoUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 
   lightboxAbierto: boolean = false;
   mediaActual: string = '';
