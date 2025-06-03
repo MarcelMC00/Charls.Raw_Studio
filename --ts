@@ -1,0 +1,13 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/**/*.{html,ts}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        antic: ['"Antic Didone"', 'serif'],
+        raleway: ['"Raleway"', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+}

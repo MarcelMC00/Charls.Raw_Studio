@@ -1,0 +1,54 @@
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <ng-container *ngFor="let slide of slides; let i = index">
+    <ng-container *ngIf="i === currentIndex">
+
+      <div
+        @fadeAnimation
+        class="absolute bg-[rgba(0,0,0,0.6)] rounded-3xl max-w-5xl mx-auto p-20 text-white text-center shadow-lg flex flex-col justify-center items-center "
+        style="z-index: 20;"
+      >
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">{{ slide.title }}</h1>
+        <p class="text-lg md:text-xl text-gray-300 text-center">
+          {{ slide.description }}
+        </p>
+      </div>
+
+      <img
+        @fadeAnimation
+        class="absolute inset-0 w-full h-full object-cover"
+        [src]="slide.image"
+        alt="Slide Image"
+        (load)="imageLoaded = true" 
+      />
+
+      <img
+        class="absolute inset-0 w-full h-full object-cover opacity-0"
+        [src]="slide.image"
+        alt="Slide Image"
+        (load)="imageLoaded = true"
+      />
+
+    </ng-container>
+  </ng-container>
+
+
+  <button
+    (click)="prevSlide()"
+    class="absolute top-1/2 left-4 -translate-y-1/2  text-white rounded-full p-3 hover:bg-opacity-80 transition z-30"
+    aria-label="Anterior"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+    </svg>
+  </button>
+
+    <button
+    (click)="nextSlide()"
+    class="absolute top-1/2 right-4 -translate-y-1/2  text-white rounded-full p-3 hover:bg-opacity-80 transition z-30"
+    aria-label="Anterior"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+    </svg>
+  </button>
+</section>

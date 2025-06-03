@@ -1,0 +1,38 @@
+<nav class="fixed top-0 left-0 w-full bg-[rgba(0,0,0,0.4)] py-4 px-6 z-50 text-white flex items-center justify-center">
+    <div class="max-w-6xl w-full flex items-center justify-between">
+
+        <div class="hidden md:flex gap-12">
+            <a routerLink="/" routerLinkActive="text-[#CDCDCD] font-bold" [routerLinkActiveOptions]="{exact: true}" class="text-white text-lg hover:text-[#CDCDCD] transition-all cursor-pointer">Inicio</a>
+            <a routerLink="/sobre-mi" routerLinkActive="text-[#CDCDCD] font-bold" class="text-white text-lg hover:text-[#CDCDCD] transition-all cursor-pointer">Sobre mí</a>
+        </div>
+
+        <div>
+            <img src="/Logo1.png" alt="Logo" class="w-20 md:w-[100px]" />
+        </div>
+
+        <div class="hidden md:flex gap-12">
+            <a routerLink="/galeria" routerLinkActive="text-[#CDCDCD] font-bold" class="text-white text-lg hover:text-[#CDCDCD] transition-all cursor-pointer">Galería</a>
+            <a routerLink="/contacto" routerLinkActive="text-[#CDCDCD] font-bold" class="text-white text-lg hover:text-[#CDCDCD] transition-all cursor-pointer">Contacto</a>
+        </div>
+
+        <button (click)="toggleMenu()" class="md:hidden text-white focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
+
+    </div>
+
+    <div class="md:hidden bg-[rgba(0,0,0,0.4)] w-full absolute top-full left-0 z-50 flex flex-col items-center gap-4 py-4 origin-top transform transition-transform duration-700 ease-in-out"
+        [class.scale-y-0]="!menuOpen"
+        [class.scale-y-100]="menuOpen"
+        [style.transform-origin]="'top'"
+    >
+        <a routerLink="/" routerLinkActive="text-[#CDCDCD] font-bold" (click)="toggleMenu()" [routerLinkActiveOptions]="{exact: true}" class="text-white text-lg hover:text-[#CDCDCD] transition-all cursor-pointer">Inicio</a>
+        <a routerLink="/sobre-mi" routerLinkActive="text-[#CDCDCD] font-bold" (click)="toggleMenu()" class="text-white text-lg hover:text-[#CDCDCD] transition-all cursor-pointer">Sobre mí</a>
+        <a routerLink="/galeria" routerLinkActive="text-[#CDCDCD] font-bold" (click)="toggleMenu()" class="text-white text-lg hover:text-[#CDCDCD] transition-all cursor-pointer">Galería</a>
+        <a routerLink="/contacto" routerLinkActive="text-[#CDCDCD] font-bold" (click)="toggleMenu()" class="text-white text-lg hover:text-[#CDCDCD] transition-all cursor-pointer">Contacto</a>
+    </div>
+</nav>
+
+

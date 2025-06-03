@@ -1,0 +1,45 @@
+<section class="relative min-h-screen overflow-hidden">
+
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-10">
+        <source src="/video/videoplaybackContact.mp4" type="video/mp4" />
+        Tu navegador no soporta vídeos en HTML5.
+    </video>
+
+
+    <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
+
+    <div class="relative z-20 min-h-screen flex items-center justify-center px-6 py-20">
+        <div class="bg-white bg-opacity-90 rounded-3xl shadow-xl p-10 w-full max-w-2xl">
+
+            <h2 class="text-4xl font-bold text-center mb-8 text-gray-900">Contáctame</h2>
+
+            <form class="space-y-6">
+                <div>
+                    <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
+                        class="mt-1 block w-full border border-gray-300 rounded-lg p-3 shadow-sm focus:ring-black focus:border-black" />
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com"
+                        class="mt-1 block w-full border border-gray-300 rounded-lg p-3 shadow-sm focus:ring-black focus:border-black" />
+                </div>
+
+                <div>
+                    <label for="mensaje" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje..."
+                        class="mt-1 block w-full border border-gray-300 rounded-lg p-3 shadow-sm focus:ring-black focus:border-black resize-none"></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit"
+                        class="bg-black text-white px-6 py-3 rounded-lg shadow hover:bg-gray-800 transition duration-300">
+                            Enviar mensaje
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>

@@ -14,6 +14,7 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+            "outputPath": "dist/Charls_Raw",
             "polyfills": [
               "zone.js"
             ],
@@ -42,7 +43,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/Charls.Raw_Studio/"
             },
             "development": {
               "optimization": false,
@@ -85,6 +87,9 @@
               "src/styles.css"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

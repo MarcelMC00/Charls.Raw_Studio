@@ -1,0 +1,59 @@
+<section class="pt-40 pb-20 px-4">
+    <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 galeria">
+        <ng-container *ngFor="let item of imagenes">
+
+            <img
+                *ngIf="!item.esVideo"
+                [src]="item.src"
+                loading="eager"
+                alt="Foto"
+                (click)="abrirLightbox(item.src, false)"
+                class="w-full rounded-lg cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+            />
+
+            <div *ngIf="item.esVideo" class="relative group">
+                <video
+                    [src]="item.src"
+                    controls
+                    class="w-full rounded-lg"
+                ></video>
+            </div>
+
+        </ng-container>
+    </div>
+
+    <button
+        *ngIf="mostrarBotonArriba"
+        (click)="volverArriba()"
+        class="fixed bottom-5 right-5 bg-black bg-opacity-70 text-white p-3 rounded-full text-xl shadow-lg hover:bg-opacity-90 transition"
+    >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75 12 3m0 0 3.75 3.75M12 3v18" />
+            </svg>
+    </button>
+
+    <div
+        class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 transition-opacity duration-300"
+        *ngIf="lightboxAbierto"
+        (click)="cerrarLightbox()"
+    >
+        <ng-container *ngIf="esVideoActual; else imagenLightbox">
+            <video
+                [src]="mediaActual"
+                controls
+                autoplay
+                class="max-w-full max-h-[90vh] rounded shadow-xl"
+                (click)="$event.stopPropagation()"
+            ></video>
+        </ng-container>
+
+        <ng-template #imagenLightbox>
+            <img
+                [src]="mediaActual"
+                alt="Ampliada"
+                class="max-w-full max-h-[90vh] rounded shadow-xl"
+                (click)="$event.stopPropagation()"
+            />
+        </ng-template>
+    </div>
+</section>
