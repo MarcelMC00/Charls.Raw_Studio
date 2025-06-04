@@ -23,22 +23,22 @@ export class Home implements OnInit, OnDestroy {
 
   slides = [
     {
-      image: '/img/HyJ_06072024_360.JPG',
+      image: 'img/HyJ_06072024_360.JPG',
       title: 'Capturando momentos inolvidables',
       description: 'Fotografía y vídeo profesional para bodas, eventos y sesiones personalizadas. Inspira, emociona, recuerda.'
     },
     {
-      image: '/img/HyJ_06072024_070.JPG',
+      image: 'img/HyJ_06072024_070.JPG',
       title: 'Tu historia en imágenes',
       description: 'No solo tomamos fotos, creamos recuerdos visuales llenos de emoción, belleza y verdad.'
     },
     {
-      image: '/img/Copia de BodaGyE_007.jpg',
+      image: 'img/Copia de BodaGyE_007.jpg',
       title: 'Un día, mil emociones',
       description: 'Desde la mirada cómplice hasta el abrazo más sincero, inmortalizamos cada detalle de tu gran día.'
     },
     {
-      image: '/img/prebodaCyP083.JPG',
+      image: 'img/prebodaCyP083.JPG',
       title: 'Emociones que se sienten al mirar',
       description: 'Bodas, eventos y momentos especiales con un enfoque artístico, elegante y lleno de vida.'
     }
